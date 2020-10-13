@@ -7,6 +7,7 @@ public class Menus {
     public static String MainMenu() {
         System.out.println("*-----------------------------*");
         System.out.println("* 1. Commander une Pizza      *");
+        System.out.println("* 2. Payer vos Pizza          *");
         System.out.println("*-----------------------------*");
         System.out.println("* 0. Arret du systeme         *");
         System.out.println("*-----------------------------*");
@@ -18,7 +19,6 @@ public class Menus {
 
     // MENU POUR LA GESTION DU STOCK DU DISTRIBUTEUR
     public static String MenuPizza() {
-        System.console();
         System.out.println("*---------------------------------*");
         System.out.println("* 1. Pizza Calzone                *");
         System.out.println("* 2. WattiPizza                   *");
@@ -28,6 +28,7 @@ public class Menus {
         System.out.println("*---------------------------------*");
         System.out.print("* -> Option : ");
         String userOpt = scan.next();
+        System.out.print(userOpt);
         // On retourne le choix utilisateur
         return userOpt;
     }
