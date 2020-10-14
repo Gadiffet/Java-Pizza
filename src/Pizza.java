@@ -4,12 +4,13 @@ public class Pizza {
     public String nomPizza;
     public double prixPizza;
 
+
     // CONSTRUCTEUR
     public Pizza (int idPizza, String nomPizza, double prixPizza) {
         this.idPizza = idPizza;
         this.nomPizza = nomPizza;
         this.prixPizza = prixPizza;
-    }
+    } 
 
     // GETTERS ET SETTERS
     public int getIdPizza() {

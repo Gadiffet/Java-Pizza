@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class Menus {
@@ -17,18 +18,32 @@ public class Menus {
         return userOpt;
     }
 
-    // MENU POUR LA GESTION DU STOCK DU DISTRIBUTEUR
-    public static String MenuPizza() {
+    // MENU POUR LA COMMANDE
+    public static String MenuPizza(List<Pizza> listePizza) { 
         System.out.println("*---------------------------------*");
-        System.out.println("* 1. Pizza Calzone                *");
-        System.out.println("* 2. WattiPizza                   *");
-        System.out.println("* 3. Pizza Sauce Spéciale du Chef *");
+        listePizza.forEach(x -> {
+            System.out.println("* " + x.getIdPizza() + "  " + x.getNomPizza() + "  " + x.getPrixPizza() + "€  *");
+        });
         System.out.println("*---------------------------------*");
         System.out.println("* 0. Revenir au menu principal    *");
         System.out.println("*---------------------------------*");
         System.out.print("* -> Option : ");
         String userOpt = scan.next();
-        System.out.print(userOpt);
+        // On retourne le choix utilisateur
+        return userOpt;
+    }
+
+     // MENU POUR LE RECAP. COMMANDE
+     public static String RecapCommande() {
+        System.out.println("*---------------------------------*");
+        System.out.println("* Vos Pizza Commandé :            *");
+        System.out.println("*                   *");
+        System.out.println("*  *");
+        System.out.println("*---------------------------------*");
+        System.out.println("* 0. Revenir au menu principal    *");
+        System.out.println("*---------------------------------*");
+        System.out.print("* -> Option : ");
+        String userOpt = scan.next();
         // On retourne le choix utilisateur
         return userOpt;
     }

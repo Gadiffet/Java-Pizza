@@ -1,28 +1,42 @@
+import java.util.ArrayList;
+import java.util.List;
+
 // Ce traitement utilise les sous-classes suivantes :
 // - Menus          -> L'ensemble des menus de l'application
 // - Boisson        -> La définition de la classe
 
 public class Main {
+    //Nos Pizza
+    static Pizza pizzaCalzone = new Pizza(1, "Pizza Calzone", 11.50);
+    static Pizza wattiPizza = new Pizza(2, "WattiPizza", 16.00);
+    static Pizza pizzaSauceSpecialeDuChef = new Pizza(3, "Pizza Sauce Spéciale du Chef", 35.00); 
+    
+    static List<Pizza> listePizza = new ArrayList<>();
 
     public static void main(String[] args) {
         // DECLARATIONS DES CONSTANTES ET VARIABLES
         String shutdown = "0"; // Constante pour l'arrêt du système
         String userOpt;        // Choix utilisateur (MainMenu)
 
+        listePizza.add(pizzaCalzone);
+        listePizza.add(wattiPizza);
+        listePizza.add(pizzaSauceSpecialeDuChef);
+
         // TRAITEMENT PRINCIPAL
         do {
             // Affichage du menu principal
             userOpt = Menus.MainMenu();
+            int[] TotalPizza = new int[3];
 
             // Aiguillage du traitement
             switch (userOpt) {
                 // Fonctionnalité de gestion du stock du distributeur
                 case "1":
-                    Menus.MenuPizza();
+                    MenuPizza();
                     break;
                 // Fonctionnalité de gestion du stock du distributeur
                 case "2":
-                    //Menus.payant();
+                    Menus.RecapCommande();
                     break;
                 // Fonctionnalité d'arrêt du système
                 case "0":
@@ -35,41 +49,45 @@ public class Main {
         } while (!userOpt.equals(shutdown));
     }
 
-    static void GestionStockDistributeur() {
+    static int[] MenuPizza() {
         String exitFunction = "0";  // Constante pour le retour au menu principal
         String userOpt;             // Choix utilisateur (GestionStockDistributeurMenu)
         int PizzaCalzone = 0;
         int WattiPizza = 0;
-        int PizzaSauceSpécialeDuChef = 0;
+        int PizzaSauceSpecialeDuChef = 0;
 
         do {
             // Affichage du menu pour la fonctionnalité "1. Gérer le stock"
-            userOpt = Menus.MenuPizza();
+            userOpt = Menus.MenuPizza(listePizza);
             
             // Aiguillage du traitement
             switch (userOpt) {
                 case "1":
                     PizzaCalzone = PizzaCalzone + 1;
-                    System.out.println("*-----------------------------*");
-                    System.out.println("*Pizza ajoutée dans le panier *");
-                    System.out.println("*-----------------------------*");
-                    System.out.println(PizzaCalzone);
+                    System.out.println("*------------------------------*");
+                    System.out.println("* Pizza ajoutée dans le panier *");
+                    System.out.println("*------------------------------*");
                     break;
                 case "2":
                     WattiPizza = WattiPizza + 1;
-                    System.out.println("*-----------------------------*");
-                    System.out.println("*Pizza ajoutée dans le panier *");
-                    System.out.println("*-----------------------------*");
+                    System.out.println("*------------------------------*");
+                    System.out.println("* Pizza ajoutée dans le panier *");
+                    System.out.println("*------------------------------*");
                     break;
                 case "3":
-                    PizzaSauceSpécialeDuChef = PizzaSauceSpécialeDuChef + 1;
-                    System.out.println("*-----------------------------*");
-                    System.out.println("*Pizza ajoutée dans le panier *");
-                    System.out.println("*-----------------------------*");
+                    PizzaSauceSpecialeDuChef = PizzaSauceSpecialeDuChef + 1;
+                    System.out.println("*------------------------------*");
+                    System.out.println("* Pizza ajoutée dans le panier *");
+                    System.out.println("*------------------------------*");
                     break;
                 default:
                     break;
             }
         } while (!userOpt.equals(exitFunction));
+        int[] TotalPizza = {PizzaCalzone, WattiPizza, PizzaSauceSpecialeDuChef};
+        return TotalPizza;
     }
+    // static void PanierClient(TotalPizza) {
+    //         System.out.println("Pizza Calzone : " + TotalPizza[0] + " WattiPizza : " + TotalPizza[1] + " Pizza Sauce Spéciale du Chef : " + TotalPizza[2]);
+    //     }
 }
