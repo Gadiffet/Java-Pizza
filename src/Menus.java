@@ -1,8 +1,10 @@
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Scanner;
 
 public class Menus {
     private static Scanner scan = new Scanner(System.in);
+    private static DecimalFormat df = new DecimalFormat("0.00");
 
     // MENU PRINCIPAL DE L'APPLICATION
     public static String MainMenu() {
@@ -22,7 +24,7 @@ public class Menus {
     public static String MenuPizza(List<Pizza> listePizza) { 
         System.out.println("*---------------------------------*");
         listePizza.forEach(x -> {
-            System.out.println("* " + x.getIdPizza() + "  " + x.getNomPizza() + "  " + x.getPrixPizza() + "€  *");
+            System.out.println("* " + x.getIdPizza() + "  " + x.getNomPizza() + "  " + df.format(x.getPrixPizza()) + "€  *");
         });
         System.out.println("*---------------------------------*");
         System.out.println("* 0. Revenir au menu principal    *");

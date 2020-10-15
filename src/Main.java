@@ -6,21 +6,12 @@ import java.util.List;
 // - Boisson        -> La définition de la classe
 
 public class Main {
-    //Nos Pizza
-    static Pizza pizzaCalzone = new Pizza(1, "Pizza Calzone", 11.50);
-    static Pizza wattiPizza = new Pizza(2, "WattiPizza", 16.00);
-    static Pizza pizzaSauceSpecialeDuChef = new Pizza(3, "Pizza Sauce Spéciale du Chef", 35.00); 
-    
-    static List<Pizza> listePizza = new ArrayList<>();
 
     public static void main(String[] args) {
         // DECLARATIONS DES CONSTANTES ET VARIABLES
         String shutdown = "0"; // Constante pour l'arrêt du système
         String userOpt;        // Choix utilisateur (MainMenu)
 
-        listePizza.add(pizzaCalzone);
-        listePizza.add(wattiPizza);
-        listePizza.add(pizzaSauceSpecialeDuChef);
 
         // TRAITEMENT PRINCIPAL
         do {
@@ -57,7 +48,7 @@ public class Main {
 
         do {
             // Affichage du menu pour la fonctionnalité "1. Gérer le stock"
-            userOpt = Menus.MenuPizza(listePizza);
+            userOpt = Menus.MenuPizza(ConnectionSQL.listePizza());
             
             // Aiguillage du traitement
             switch (userOpt) {
