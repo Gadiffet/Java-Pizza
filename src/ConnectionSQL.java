@@ -8,7 +8,7 @@ public class ConnectionSQL{
             try {
                 Class.forName("com.mysql.jdbc.Driver");  
             } catch (ClassNotFoundException e) {
-                System.err.println("PostgreSQL DataSource unable to load PostgreSQL JDBC Driver");
+                System.err.println("MySQL DataSource unable to load MySQL JDBC Driver");
             }
             String url = "jdbc:mysql://localhost/testdb";
             String user = "user12";
