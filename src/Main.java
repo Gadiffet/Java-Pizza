@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 // Ce traitement utilise les sous-classes suivantes :
 // - Menus          -> L'ensemble des menus de l'application
 // - Boisson        -> La définition de la classe
