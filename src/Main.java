@@ -51,21 +51,21 @@ public class Main {
             switch (userOpt) {
                 case "1":
                     PizzaCalzone = PizzaCalzone + 1;
-                    System.out.println("*------------------------------*");
-                    System.out.println("* Pizza ajoutée dans le panier *");
-                    System.out.println("*------------------------------*");
+                    System.out.println("*---------------------------------*");
+                    System.out.println("*  Pizza ajoutée dans le panier   *");
+                    System.out.println("*---------------------------------*");
                     break;
                 case "2":
                     WattiPizza = WattiPizza + 1;
-                    System.out.println("*------------------------------*");
-                    System.out.println("* Pizza ajoutée dans le panier *");
-                    System.out.println("*------------------------------*");
+                    System.out.println("*---------------------------------*");
+                    System.out.println("*  Pizza ajoutée dans le panier   *");
+                    System.out.println("*---------------------------------*");
                     break;
                 case "3":
                     PizzaSauceSpecialeDuChef = PizzaSauceSpecialeDuChef + 1;
-                    System.out.println("*------------------------------*");
-                    System.out.println("* Pizza ajoutée dans le panier *");
-                    System.out.println("*------------------------------*");
+                    System.out.println("*---------------------------------*");
+                    System.out.println("*  Pizza ajoutée dans le panier   *");
+                    System.out.println("*---------------------------------*");
                     break;
                 default:
                     break;
