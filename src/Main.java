@@ -26,7 +26,6 @@ public class Main {
         do {
             // Affichage du menu principal
             userOpt = Menus.MainMenu();
-            int[] TotalPizza = new int[3];
 
             // Aiguillage du traitement
             switch (userOpt) {
