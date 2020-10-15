@@ -3,14 +3,14 @@ public class Commande {
     public int idPizza;
     public int idCommande;
     public int quantite;
-    public int totalPrix;
+    public String nomPizza;
 
     // CONSTRUCTEUR
-    public Commande (int idPizza, int idCommande, int quantite, int totalPrix) {
-        this.idPizza = idPizza;
+    public Commande (int idCommande, int idPizza, int quantite, String nomPizza) {
         this.idCommande = idCommande;
+        this.idPizza = idPizza;
         this.quantite = quantite;
-        this.totalPrix = totalPrix;
+        this.nomPizza = nomPizza;
     }
 
     // GETTERS ET SETTERS
@@ -38,11 +38,11 @@ public class Commande {
         this.quantite = quantite;
     }
 
-    public int getTotalPrix() {
-        return totalPrix;
+    public String getNomPizza() {
+        return nomPizza;
     }
 
-    public void setTotalPrix(int totalPrix) {
-        this.totalPrix = totalPrix;
+    public void setNomPizza(String nomPizza) {
+        this.nomPizza = nomPizza;
     }
 }

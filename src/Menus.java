@@ -27,6 +27,7 @@ public class Menus {
             System.out.println("* " + x.getIdPizza() + "  " + x.getNomPizza() + "  " + df.format(x.getPrixPizza()) + "€  *");
         });
         System.out.println("*---------------------------------*");
+        System.out.println("* 8. Récapitulatif de la commande *");
         System.out.println("* 0. Revenir au menu principal    *");
         System.out.println("*---------------------------------*");
         System.out.print("* -> Option : ");
