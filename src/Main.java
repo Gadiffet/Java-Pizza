@@ -48,44 +48,44 @@ public class Main {
         int PizzaSauceSpecialeDuChef = 0;
         DecimalFormat df = new DecimalFormat("0.00");
 
-        do {
+//        do {
             // Affichage du menu pour la fonctionnalité "1. Gérer le stock"
-            userOpt = Menus.MenuPizza(ConnectionSQL.ListePizza());
+            Menus.MenuPizza(ConnectionSQL.ListePizza());
             
             // Aiguillage du traitement
-            switch (userOpt) {
-                case "1":
-                    PizzaCalzone = PizzaCalzone + 1;
-                    System.out.println("*---------------------------------*");
-                    System.out.println("*  Pizza ajoutée dans le panier   *");
-                    System.out.println("*---------------------------------*");
-                    InsertSQL.InsertCommande(idCommande, 1, 1);
-                    break;
-                case "2":
-                    WattiPizza = WattiPizza + 1;
-                    System.out.println("*---------------------------------*");
-                    System.out.println("*  Pizza ajoutée dans le panier   *");
-                    System.out.println("*---------------------------------*");
-                    InsertSQL.InsertCommande(idCommande, 2, 1);
-                    break;
-                case "3":
-                    PizzaSauceSpecialeDuChef = PizzaSauceSpecialeDuChef + 1;
-                    System.out.println("*---------------------------------*");
-                    System.out.println("*  Pizza ajoutée dans le panier   *");
-                    System.out.println("*---------------------------------*");
-                    InsertSQL.InsertCommande(idCommande, 3, 1);
-                    break;
-                case "8":
-                    List<Commande> listeCommande = ConnectionSQL.RecapCommande(idCommande);
-                    System.out.println("* Numéro de commande : " + idCommande + " *");
-                    listeCommande.forEach(x -> {
-                        System.out.println("* " + x.getIdPizza() + ".  " + x.getNomPizza() + "  " + x.getQuantite() + " *");
-                    });
-                    break;
-                default:
-                    break;
-            }
-        } while (!userOpt.equals(exitFunction));
+//            switch (userOpt) {
+//                case "1":
+//                    PizzaCalzone = PizzaCalzone + 1;
+//                    System.out.println("*---------------------------------*");
+//                    System.out.println("*  Pizza ajoutée dans le panier   *");
+//                    System.out.println("*---------------------------------*");
+//                    InsertSQL.InsertCommande(idCommande, 1, 1);
+//                    break;
+//                case "2":
+//                    WattiPizza = WattiPizza + 1;
+//                    System.out.println("*---------------------------------*");
+//                    System.out.println("*  Pizza ajoutée dans le panier   *");
+//                    System.out.println("*---------------------------------*");
+//                    InsertSQL.InsertCommande(idCommande, 2, 1);
+//                    break;
+//                case "3":
+//                    PizzaSauceSpecialeDuChef = PizzaSauceSpecialeDuChef + 1;
+//                    System.out.println("*---------------------------------*");
+//                    System.out.println("*  Pizza ajoutée dans le panier   *");
+//                    System.out.println("*---------------------------------*");
+//                    InsertSQL.InsertCommande(idCommande, 3, 1);
+//                    break;
+//                case "8":
+//                    List<Commande> listeCommande = ConnectionSQL.RecapCommande(idCommande);
+//                    System.out.println("* Numéro de commande : " + idCommande + " *");
+//                    listeCommande.forEach(x -> {
+//                        System.out.println("* " + x.getIdPizza() + ".  " + x.getNomPizza() + "  " + x.getQuantite() + " *");
+//                    });
+//                    break;
+//                default:
+//                    break;
+//            }
+//        } while (!userOpt.equals(exitFunction));
         int[] TotalPizza = {PizzaCalzone, WattiPizza, PizzaSauceSpecialeDuChef};
         return TotalPizza;
     }
