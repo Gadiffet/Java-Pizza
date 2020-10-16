@@ -1,46 +1,51 @@
+import javax.swing.*;
+import java.awt.event.*;
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Scanner;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 public class Menus {
     private static Scanner scan = new Scanner(System.in);
     private static DecimalFormat df = new DecimalFormat("0.00");
 
-
     // MENU PRINCIPAL DE L'APPLICATION
-    public static String MainMenu() {
-        JFrame frame = new JFrame("Arti'Pizza");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(720, 720);
-        frame.setVisible(true);
+    public static void MainMenu(int idCommande) {
+        JFrame frame = new JFrame("Pizzéria Thédovasé");
 
-        JLabel label = new JLabel("Bienvenue !");
-        frame.add(label);
+        JLabel label = new JLabel("Bienvenue ! Choisisser une option :", JLabel.CENTER);
 
-        //On définie le panel
         JPanel panel = new JPanel();
 
-        JButton btn1 = new JButton("Commander une Pizza");
-        JButton btn2 = new JButton("Payer vos Pizza ");      
-        JButton btn3 = new JButton("Arret du systeme ");   
+        JButton btnCommande = new JButton("Commander une Pizza");
+        JButton btnPayer = new JButton("Payer vos Pizza");
+        JButton btnArret = new JButton("Arret du système");
 
-        // Ajouter les boutons au frame
-        panel.add(btn1); 
-        panel.add(btn2);
-        panel.add(btn3); 
-         
-        // Ajouter label et panel au frame
+        panel.add(btnCommande);
+        panel.add(btnPayer);
+        panel.add(btnArret);
+
+        btnCommande.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                Main.MenuPizza(idCommande);
+            }
+        });
+
+        frame.setLayout(null);
+        label.setBounds(300,200, 200, 100);
         frame.add(label);
+        panel.setBounds(150, 300, 500, 100);
         frame.add(panel);
 
-        String userOpt = scan.next();
+        frame.setSize(800, 800);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
+        /*System.out.println("");
+        System.out.println("* 0.          *");
+        System.out.println("*-----------------------------*");
+        System.out.print("* -> Option : ");*/
         // On retourne le choix utilisateur
-        return userOpt;
+        // return userOpt;
     }
 
     // MENU POUR LA COMMANDE

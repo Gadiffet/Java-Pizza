@@ -14,30 +14,30 @@ public class Main {
         int idCommande;
 
         // TRAITEMENT PRINCIPAL
-        do {
+//        do {
             // Affichage du menu principal
-            userOpt = Menus.MainMenu();
-
-            // Aiguillage du traitement
-            switch (userOpt) {
-                // Fonctionnalité de gestion du stock du distributeur
-                case "1":
-                    idCommande = ConnectionSQL.RecupIdCommande();
-                    MenuPizza(idCommande);
-                    break;
-                // Fonctionnalité de gestion du stock du distributeur
-                case "2":
-                    Menus.RecapCommande();
-                    break;
-                // Fonctionnalité d'arrêt du système
-                case "0":
-                    break;
-                // Gestion de tous les autres cas
-                default:
-                    break;
-            }
-            // Gestion de l'arrêt du système (si nécessaire)
-        } while (!userOpt.equals(shutdown));
+            idCommande = ConnectionSQL.RecupIdCommande();
+            Menus.MainMenu(idCommande);
+//
+//            // Aiguillage du traitement
+//            switch (userOpt) {
+//                // Fonctionnalité de gestion du stock du distributeur
+//                case "1":
+//                    MenuPizza(idCommande);
+//                    break;
+//                // Fonctionnalité de gestion du stock du distributeur
+//                case "2":
+//                    Menus.RecapCommande();
+//                    break;
+//                // Fonctionnalité d'arrêt du système
+//                case "0":
+//                    break;
+//                // Gestion de tous les autres cas
+//                default:
+//                    break;
+//            }
+//            // Gestion de l'arrêt du système (si nécessaire)
+//        } while (!userOpt.equals(shutdown));
     }
 
     static int[] MenuPizza(int idCommande) {
